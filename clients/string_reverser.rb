@@ -4,7 +4,7 @@ require 'uri'
 
 class MagicString
   def self.get
-    uri = URI('http://localhost:4567/getstring')
+    uri = URI('http://challenge-api.ketchup.cf-app.com/getstring')
 
     get_response = Net::HTTP.get_response(uri)
     word = get_response.body
@@ -13,7 +13,7 @@ class MagicString
   end
 
   def self.post(answer)
-    uri = URI('http://localhost:4567/validatestring')
+    uri = URI('http://challenge-api.ketchup.cf-app.com/validatestring')
 
     http = Net::HTTP.new(uri.host, uri.port)
     json_headers = {"Content-Type" => "application/json",
